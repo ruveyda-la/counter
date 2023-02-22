@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}">
+    <title>Counter</title>
+</head>
+<body>
+    <div class="main">
+        <form class="form1" action="/">
+            <h1 class="header">Counter</h1>
+            <p class="view">Views: {{session['view']}}</p>
+            <p class="count">Count: {{session['count']}}</p>
+            <input class='click' type="submit" value="increment by 2" formaction="/click">
+            <input class="reset" type="submit" value="reset" formaction="/reset"><br>
+        </form>
+        <form class="form2" action="/increment" method="POST">
+            <p>Write any number below to increment the counter:</p>
+            <input class ='increment' type="text" name="increment"><br>
+            <input class ="countplus" type="submit" value="submit">
+        </form>
+
+
+            
+        
+    </div>
+    
+</body>
+</html>
